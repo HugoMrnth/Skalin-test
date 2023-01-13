@@ -1,12 +1,6 @@
 <template>
   <div class="animal-list">
-      <p class="instructions">
-          // TODO: utiliser display: grid pour afficher 2 animal-card sur chaque ligne
-      </p>
-      <p class="instructions">          
-          // TODO: afficher un message temporaire (text qui disparait) lorsqu'un animal est mis à jour pour confirmer la sauvegarde
-      </p>
-    <animal-card v-for="animal in animals" :key="animal.id" :animal="animal" />
+    <animal-card v-for="animal in animals" :key="animal.id" :animal="animal" class="animal-card"/>
   </div>
 </template>
 
@@ -26,8 +20,17 @@ export default {
 
 <style scoped>
 .animal-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    width: 95%;
+}
+
+.animal-card {
+  margin: auto;
 }
 </style>
+
+
+  // TODO: utiliser display: grid pour afficher 2 animal-card sur chaque ligne
+  // TODO: afficher un message temporaire (text qui disparait) lorsqu'un animal est mis à jour pour confirmer la sauvegarde
