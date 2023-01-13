@@ -1,6 +1,7 @@
 <template>
   <div class="animal-info">
     <b>{{ animal.name }}</b>
+    <p>{{ animal.id }}</p>
     <span><u>Espèce</u>: {{ animal.species }}</span>
     <span><u>Age</u>: {{ animal.age }}</span>
 

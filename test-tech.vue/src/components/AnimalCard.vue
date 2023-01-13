@@ -1,6 +1,6 @@
 <template>
   <div class="animal-card">
-    <animal-input v-if="isEditMode" @save="isEditMode = false" />
+    <animal-input v-if="isEditMode" :animal="animal" @save="saveInfos" />
     <animal-info v-else :animal="animal" @edit="isEditMode = true" />
   </div>
 </template>
@@ -22,6 +22,10 @@ export default {
     }
   },
   methods: {
+    saveInfos(param){
+      this.$store.dispatch('animals/updateAnimalAction', param)
+      this.isEditMode = false
+    }
   }
 }
 </script>
