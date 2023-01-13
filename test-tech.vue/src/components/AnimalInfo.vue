@@ -5,13 +5,9 @@
     <span><u>Age</u>: {{ animal.age }}</span>
 
     <br />
-    <p class="instructions">
-      // TODO Ajouter les informations du dernier RDV chez le vétérinaire via un
-      modèle AppointementModel dans le store
-    </p>
-    <ul class="instructions">
-      <li>Date du rdv: Date</li>
-      <li>Type de rdv: string parmi {contrôle, blessure, vaccin}</li>
+      <ul class="instructions">
+      <li>Date du rdv: {{animal.lastAppointement.date}}</li>
+      <li>Type de rdv: {{animal.lastAppointement.appointementType}}</li>
     </ul>
     <br />
     <button @click="onEdit">Modifier</button>
@@ -41,3 +37,11 @@ export default {
   text-align: left;
 }
 </style>
+
+<li>Date du rdv: Date</li>
+<li>Type de rdv: string parmi {contrôle, blessure, vaccin}</li>
+
+<p class="instructions">
+  // TODO Ajouter les informations du dernier RDV chez le vétérinaire via un
+  modèle AppointementModel dans le store
+</p>

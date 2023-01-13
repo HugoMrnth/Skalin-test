@@ -1,5 +1,6 @@
 <template>
   <div class="animal-list">
+    {{ JSON.stringify(animals) }}
     <animal-card v-for="animal in animals" :key="animal.id" :animal="animal" class="animal-card"/>
   </div>
 </template>
