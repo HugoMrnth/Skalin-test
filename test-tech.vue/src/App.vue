@@ -6,29 +6,39 @@
 </template>
 
 <script>
-import AnimalList from './components/AnimalList.vue'
+import AnimalList from "./components/AnimalList.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    AnimalList
+    AnimalList,
   },
   created() {
-    this.$store.dispatch('animals/initializeAnimals')
-  }
-}
+    this.$store.dispatch("animals/initializeAnimals");
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 3rem;
+  background-image: url("../public/petrebels-kuzJU_dlBls-unsplash.jpg");
+  background-size: cover;
 }
-.instructions {
-  color: blueviolet !important;
+body {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 3rem;
 }
 </style>
