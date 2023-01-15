@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      animaltoUpdate: this.animal
+      animaltoUpdate: JSON.parse(JSON.stringify(this.animal))
     }
   },
   methods: {
