@@ -88,7 +88,7 @@ select {
   font-size: 1rem;
   width: 50%;
   border-radius: 4px;
-  padding: 0.2rem 0.2rem; 
+  padding: 0.2rem 0.2rem;
   margin-left: 0.2rem;
 }
 .main-container {

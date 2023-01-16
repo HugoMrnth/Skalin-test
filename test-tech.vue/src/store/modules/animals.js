@@ -63,6 +63,10 @@ const mutations = {
   },
   updateAnimal(state, animal) {
     let animalToUpdate = state.all.find((item) => item.id === animal.id);
+    if(animal.age < 1) {
+      alert("L'age de l'animal ne peut être inferieur à 1 ans")
+      throw("animal a can't be under 1")
+    }
     if (animal.lastAppointement.date !== animalToUpdate.lastAppointement.date) {
       animal.lastAppointement.date = new Date(
         animal.lastAppointement.date
