@@ -54,6 +54,9 @@ const actions = {
   updateAnimalAction({ commit }, animal) {
     commit("updateAnimal", animal);
   },
+  addNewAnimalAction({ commit }, animal) {
+    commit("addNewAnimal", animal);
+  },
 };
 
 // mutations
@@ -63,9 +66,9 @@ const mutations = {
   },
   updateAnimal(state, animal) {
     let animalToUpdate = state.all.find((item) => item.id === animal.id);
-    if(animal.age < 1) {
-      alert("L'age de l'animal ne peut être inferieur à 1 ans")
-      throw("animal a can't be under 1")
+    if (animal.age < 1) {
+      alert("L'age de l'animal ne peut être inferieur à 1 ans");
+      throw "animal a can't be under 1";
     }
     if (animal.lastAppointement.date !== animalToUpdate.lastAppointement.date) {
       animal.lastAppointement.date = new Date(
@@ -73,6 +76,24 @@ const mutations = {
       ).toLocaleDateString();
     }
     Object.assign(animalToUpdate, animal);
+  },
+  addNewAnimal(state, animal) {
+    if (animal.age < 1) {
+      alert("L'age de l'animal ne peut être inferieur à 1 ans");
+      throw "animal a can't be under 1";
+    }
+    if (animal.name === "") {
+      alert("Veuillez choisir un nom à l'animal");
+      throw "animal name can't be empty";
+    }
+    state.all = [...state.all, new AnimalModel({
+        name: animal.name,
+        age: animal.age,
+        species: animal.species,
+        date: animal.date,
+        appointementType: animal.appointementType,
+      }),
+    ];
   },
 };
 

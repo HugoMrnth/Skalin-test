@@ -8,7 +8,5 @@ export default class AnimalModel {
         this.species = species;
         this.age = age;
         this.lastAppointement = new AppointementModel({date: date, appointementType: appointementType})
-
-        // TODO: ajouter `this.lastAppointement` de type AppointementModel
     }
 }
